@@ -1,0 +1,92 @@
+﻿
+@*@{
+    ViewBag.Title = "EmployeeArrival";
+}
+
+<h2>EmployeeArrival</h2>*@
+
+@model EmployeeArrivalTrackerClient.EmployeeArrivalViewModel
+@using System.Globalization;
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div style="display:inline-block; vertical-align: top;">
+        <table class="table" id="emp">
+            <tr>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Teams</th>
+                <th>ManagerID</th>
+                <th>Time</th>
+            </tr>
+
+                @foreach (var item in Model.Items)
+                {
+                <tr>
+                    <td> @item.Name</td>
+                    <td> @item.SurName </td>
+                    <td> @item.Email</td>
+                    <td> @item.Role</td>
+                    <td> @item.Teams</td>
+                    <td> @item.ManagerId</td>
+                    <td> @item.ArrivalTime</td>
+                </tr>
+                }
+            
+        </table>
+        <a class="button" href="Index">Exit</a>
+    </div>
+
+
+
+    <style>
+        #emp {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+            #emp td, #emp th {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+
+            #emp tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+
+            #emp tr:hover {
+                background-color: #ddd;
+            }
+
+            #emp th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                background-color: dodgerblue;
+                color: white;
+            }
+
+        .button {
+            display: block;
+            width: 150px;
+            height: 60px;
+            background: #4E9CAF;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+
+</body>
+
+</html>
